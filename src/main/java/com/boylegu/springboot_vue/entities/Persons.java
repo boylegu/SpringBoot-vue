@@ -1,22 +1,32 @@
 package com.boylegu.springboot_vue.entities;
 
 import javax.persistence.*;
-import java.awt.*;
 import java.util.Date;
+import java.io.Serializable;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 
 @Entity
-public class Persons {
+@Table(name = "persons")
+public class Persons implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 
     private long id;
+    @Column(name = "create_datetime")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date create_datetime;
+    @Column(name = "username")
     private String username;
+    @Column(name = "email")
     private String email;
+    @Column(name = "phone")
     private String phone;
+    @Column(name = "sex")
     private String sex;
-    private TextArea zone;
+    @Column(name = "zone")
+    private String zone;
 
     public long getId() {
         return id;
@@ -65,5 +75,13 @@ public class Persons {
 
     public void setSex(String sex) {
         this.sex = sex;
+    }
+
+    public String getZone() {
+        return zone;
+    }
+
+    public void setZone(String zone) {
+        this.zone = zone;
     }
 }
