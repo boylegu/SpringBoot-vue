@@ -14,4 +14,5 @@ public interface PersonsRepository extends JpaRepository<Persons, Long> {
 
     @Query(FIND_SEX)
     List<Persons> findSex();
+
 }
