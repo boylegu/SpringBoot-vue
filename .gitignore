@@ -23,5 +23,8 @@ dist/
 nbdist/
 .nb-gradle/
 
-# images
+## images
 *.lpop
+
+## NodeJS
+node_modules

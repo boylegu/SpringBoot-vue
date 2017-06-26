@@ -106,10 +106,10 @@
                         email: this.email
                     }
                 }).then((response) => {
-                    this.tableData = response.data.results;
-                    this.total = response.data.total;
-                    this.pageSize = response.data.count;
-                    console.log(response.data);
+                    this.tableData = response.data.data.results;
+                    this.total = response.data.data.total;
+                    this.pageSize = response.data.data.count;
+                    console.log(response.data.data);
                 }).catch(function (response) {
                     console.log(response)
                 });

@@ -1,11 +1,16 @@
 package com.boylegu.springboot_vue.controller;
 
+import com.boylegu.springboot_vue.entities.Persons;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
@@ -36,6 +41,9 @@ public class MainController {
     @Autowired
     private PersonsRepository personsRepository;
 
+    @Value(("${com.boylegu.paginatio.max-per-page}"))
+    Integer maxPerPage;
+
     @RequestMapping(value = "/sex", method = RequestMethod.GET)
     public ResponseEntity<?> getSexAll() {
 
@@ -53,27 +61,53 @@ public class MainController {
         return responseEntity;
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public Map<String, PaginationMultiTypeValuesHelper> getPersonsAll() {
+    @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    //public Map<String, PaginationMultiTypeValuesHelper> getPersonsAll
+    public Map<String, PaginationMultiTypeValuesHelper> getPersonsAll(
+            @RequestParam(value = "page", required = false) Integer pages,
+            @RequestParam("sex") String sex,
+            @RequestParam("email") String email
+    ) {
 
-        int page = 1, size = 5;
+        if (pages == null) {
+            pages = 1;
+        }
         Sort sort = new Sort(Direction.ASC, "id");
-        Pageable pageable = new PageRequest(page, size, sort);
+
+        Pageable pageable = new PageRequest(pages - 1, maxPerPage, sort);
 
         PaginationMultiTypeValuesHelper multiValue = new PaginationMultiTypeValuesHelper();
         Map<String, PaginationMultiTypeValuesHelper> results = new HashMap<>();
 
-        Integer count = personsRepository.findAll(pageable).getSize();
-        Integer page_number = personsRepository.findAll(pageable).getNumber();
+        Integer count, page_number;
+        Object content;
+        Long total;
+        if (sex.length() == 0 && email.length() == 0) {
+            count = personsRepository.findAll(pageable).getSize();
+            page_number = personsRepository.findAll(pageable).getNumber();
+            content = personsRepository.findAll(pageable).getContent();
+            total = personsRepository.findAll(pageable).getTotalElements();
 
-        Object content = personsRepository.findAll(pageable).getContent();
-        Long total = personsRepository.count();
+        } else if (sex.length() > 0 && email.length() > 0) {
+            count = personsRepository.findBySexAndEmailContains(sex, email, pageable).getSize();
+            page_number = personsRepository.findBySexAndEmailContains(sex, email, pageable).getNumber();
+            content = personsRepository.findBySexAndEmailContains(sex, email, pageable).getContent();
+            total = personsRepository.findBySexAndEmailContains(sex, email, pageable).getTotalElements();
+
+        } else {
+            count = personsRepository.findBySex(sex, pageable).getSize();
+            page_number = personsRepository.findBySex(sex, pageable).getNumber();
+            content = personsRepository.findBySex(sex, pageable).getContent();
+            total = personsRepository.findBySex(sex, pageable).getTotalElements();
+
+        }
+
         multiValue.setCount(count);
-        multiValue.setPage(page_number);
+        multiValue.setPage(page_number + 1);
         multiValue.setResults(content);
         multiValue.setTotal(total);
-
         results.put("data", multiValue);
+
         return results;
     }
 
