@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
@@ -51,14 +50,19 @@ public class MainController {
         ArrayList<Map<String, String>> results = new ArrayList<>();
 
         for (Object value : personsRepository.findSex()) {
+
             Map<String, String> sex = new HashMap<>();
 
             sex.put("label", value.toString());
+
             sex.put("value", value.toString());
+
             results.add(sex);
         }
+
         ResponseEntity<ArrayList<Map<String, String>>> responseEntity = new ResponseEntity<>(results,
                 HttpStatus.OK);
+
         return responseEntity;
     }
 
@@ -69,45 +73,47 @@ public class MainController {
             @RequestParam("email") String email
     ) {
 
+        /*
+         *   @api {GET} /api/persons   Get all or a part of person info
+         *   @apiName GetAllInfoList
+         *   @apiGroup Info Manage
+         *   @apiVersion 1.0.0
+         *
+         *   @apiExample {httpie} Example usage: (support combinatorial search)
+         *
+         *       All person：
+         *       http /api/persons
+         *
+         *       You can according to 'sex | email' or 'sex & email'
+         *       http /api/persons?sex=xxx&email=xx
+         *       http /api/persons?sex=xxx
+         *       http /api/persons?email=xx
+         *
+         *       @apiParam {String} sex
+         *       @apiParam {String} email
+         *
+         *   @apiSuccess {String} create_datetime
+         *   @apiSuccess {String} email
+         *   @apiSuccess {String} id
+         *   @apiSuccess {String} phone
+         *   @apiSuccess {String} sex
+         *   @apiSuccess {String} username
+         *   @apiSuccess {String} zone
+         */
+
         if (pages == null) {
+
             pages = 1;
+
         }
+
         Sort sort = new Sort(Direction.ASC, "id");
 
         Pageable pageable = new PageRequest(pages - 1, maxPerPage, sort);
 
-        PaginationMultiTypeValuesHelper multiValue = new PaginationMultiTypeValuesHelper();
-        Map<String, PaginationMultiTypeValuesHelper> results = new HashMap<>();
+        PaginationFormatting paginInstance = new PaginationFormatting();
 
-        // Integer count, page_number;
-        // Object content;
-        // Long total;
-        // if (sex.length() == 0 && email.length() == 0) {
-        //     count = personsRepository.findAll(pageable).getSize();
-        //     page_number = personsRepository.findAll(pageable).getNumber();
-        //     content = personsRepository.findAll(pageable).getContent();
-        //     total = personsRepository.findAll(pageable).getTotalElements();
-        // } else if (sex.length() > 0 && email.length() > 0) {
-        //     count = personsRepository.findBySexAndEmailContains(sex, email, pageable).getSize();
-        //     page_number = personsRepository.findBySexAndEmailContains(sex, email, pageable).getNumber();
-        //     content = personsRepository.findBySexAndEmailContains(sex, email, pageable).getContent();
-        //     total = personsRepository.findBySexAndEmailContains(sex, email, pageable).getTotalElements();
-        // } else {
-        //     count = personsRepository.findBySex(sex, pageable).getSize();
-        //     page_number = personsRepository.findBySex(sex, pageable).getNumber();
-        //     content = personsRepository.findBySex(sex, pageable).getContent();
-        //     total = personsRepository.findBySex(sex, pageable).getTotalElements();
-        // }
-        PaginationFormatting ss = new PaginationFormatting();
-
-
-        // multiValue.setCount(count);
-        // multiValue.setPage(page_number + 1);
-        // multiValue.setResults(content);
-        // multiValue.setTotal(total);
-        // results.put("data", multiValue);
-
-        return ss.filterQuery(sex, email, pageable);
+        return paginInstance.filterQuery(sex, email, pageable);
     }
 
 }

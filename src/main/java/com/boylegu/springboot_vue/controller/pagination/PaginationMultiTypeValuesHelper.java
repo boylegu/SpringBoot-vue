@@ -1,10 +1,12 @@
 package com.boylegu.springboot_vue.controller.pagination;
 
 public class PaginationMultiTypeValuesHelper {
+
     private Integer count, page;
+
     private Object results;
+
     private Long total;
-    //private List<String> phoneNumbers = Collections.emptyList();
 
     public void setCount(Integer name) {
         this.count = name;
