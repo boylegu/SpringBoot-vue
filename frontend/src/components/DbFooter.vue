@@ -32,7 +32,7 @@
     export default {
         data(){
             return {
-                message: 'SanicCRUD-Vue.js v0.1',
+                message: 'SpringBoot-Vue.js v0.1',
             }
         },
         mounted (){

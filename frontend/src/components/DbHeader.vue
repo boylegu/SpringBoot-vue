@@ -12,7 +12,7 @@
         name: 'db-header',
         data () {
             return {
-                msg: 'SanicCRUD-vue'
+                msg: 'SpringBoot-vue'
             }
         }
     }
