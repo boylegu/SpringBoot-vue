@@ -1,12 +1,14 @@
 package com.boylegu.springboot_vue.controller;
 
 import com.boylegu.springboot_vue.entities.Persons;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -32,7 +34,7 @@ public class MainController {
     @Value(("${com.boylegu.paginatio.max-per-page}"))
     Integer maxPerPage;
 
-    @RequestMapping(value = "/sex", method = RequestMethod.GET)
+    @RequestMapping(value = "/sex", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> getSexAll() {
 
         /*
@@ -115,5 +117,33 @@ public class MainController {
 
         return paginInstance.filterQuery(sex, email, pageable);
     }
+
+    @RequestMapping(value = "/detail/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public  ResponseEntity<Persons>  getUser(@PathVariable Long id) {
+
+        /*
+        *    @api {GET} /api/persons/detail/:id  details info
+        *    @apiName GetPersonDetails
+        *    @apiGroup Info Manage
+        *    @apiVersion 1.0.0
+        *
+        *    @apiExample {httpie} Example usage:
+        *
+        *        http /api/persons/detail/1
+        *
+        *    @apiSuccess {String} email
+        *    @apiSuccess {String} id
+        *    @apiSuccess {String} phone
+        *    @apiSuccess {String} sex
+        *    @apiSuccess {String} username
+        *    @apiSuccess {String} zone
+        */
+
+
+        Persons user = personsRepository.findById(id);
+
+        return new ResponseEntity<>(user, HttpStatus.OK);
+    }
+
 
 }

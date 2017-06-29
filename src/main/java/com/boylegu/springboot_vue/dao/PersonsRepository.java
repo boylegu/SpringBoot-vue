@@ -10,6 +10,7 @@ import com.boylegu.springboot_vue.entities.Persons;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
+import java.util.Map;
 
 
 public interface PersonsRepository extends JpaRepository<Persons, Long> {
@@ -24,5 +25,7 @@ public interface PersonsRepository extends JpaRepository<Persons, Long> {
     Page<Persons> findBySexAndEmailContains(String sexName, String emailName, Pageable pageable);
 
     Page<Persons> findBySex(String sexName, Pageable pageable);
+
+    Persons findById(Long id);
 
 }
