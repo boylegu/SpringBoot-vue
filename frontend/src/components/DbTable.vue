@@ -130,8 +130,8 @@
             },
 
             formatter(row, column) {
-                let data = this.$moment.unix(row.create_datetime);
-                return data.format('YYYY-MM-DD HH:mm:ss')
+                let data = this.$moment(row.create_datetime, this.$moment.ISO_8601);
+                return data.format('YYYY-MM-DD')
             },
         }
     }
