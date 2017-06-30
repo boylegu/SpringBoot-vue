@@ -5,6 +5,7 @@ import com.boylegu.springboot_vue.entities.Persons;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.beans.factory.annotation.Value;
@@ -17,8 +18,8 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.data.domain.PageRequest;
 
-import com.boylegu.springboot_vue.controller.pagination.PaginationMultiTypeValuesHelper;
 import com.boylegu.springboot_vue.dao.PersonsRepository;
+import com.boylegu.springboot_vue.controller.pagination.PaginationMultiTypeValuesHelper;
 import com.boylegu.springboot_vue.controller.pagination.PaginationFormatting;
 
 import java.util.*;
@@ -43,8 +44,9 @@ public class MainController {
          * @apiGroup Info Manage
          * @apiVersion 1.0.0
          * @apiExample {httpie} Example usage:
-         * <p>
-         * http /api/persons/sex
+         *
+         *     http /api/persons/sex
+         *
          * @apiSuccess {String} label
          * @apiSuccess {String} value
          */
@@ -91,8 +93,8 @@ public class MainController {
          *       http /api/persons?sex=xxx
          *       http /api/persons?email=xx
          *
-         *       @apiParam {String} sex
-         *       @apiParam {String} email
+         *   @apiParam {String} sex
+         *   @apiParam {String} email
          *
          *   @apiSuccess {String} create_datetime
          *   @apiSuccess {String} email
@@ -119,7 +121,7 @@ public class MainController {
     }
 
     @RequestMapping(value = "/detail/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public  ResponseEntity<Persons>  getUser(@PathVariable Long id) {
+    public ResponseEntity<Persons> getUserDetail(@PathVariable Long id) {
 
         /*
         *    @api {GET} /api/persons/detail/:id  details info
@@ -129,7 +131,8 @@ public class MainController {
         *
         *    @apiExample {httpie} Example usage:
         *
-        *        http /api/persons/detail/1
+        *    @apiParam {String} sex
+        *    @apiParam {String} email
         *
         *    @apiSuccess {String} email
         *    @apiSuccess {String} id
@@ -145,5 +148,34 @@ public class MainController {
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
+    @RequestMapping(value = "/detail/{id}", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public Persons updateUser(@PathVariable Long id, @RequestBody Persons data) {
+
+        /*
+         *  @api {PUT} /api/persons/detail/:id  update person info
+         *  @apiName PutPersonDetails
+         *  @apiGroup Info Manage
+         *  @apiVersion 1.0.0
+         *
+         *  @apiParam {String} phone
+         *  @apiParam {String} zone
+         *
+         *  @apiSuccess {String} create_datetime
+         *  @apiSuccess {String} email
+         *  @apiSuccess {String} id
+         *  @apiSuccess {String} phone
+         *  @apiSuccess {String} sex
+         *  @apiSuccess {String} username
+         *  @apiSuccess {String} zone
+
+        */
+        Persons user = personsRepository.findById(id);
+
+        user.setPhone(data.getPhone());
+
+        user.setZone(data.getZone());
+
+        return personsRepository.save(user);
+    }
 
 }
