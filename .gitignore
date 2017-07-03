@@ -1,4 +1,11 @@
-target/
+target/classes
+target/generated-sources
+target/generated-test-sources
+target/maven-archiver
+target/maven-status
+target/test-classes
+target/springboot_vue-0.0.1-SNAPSHOT.jar.original
+
 !.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###
