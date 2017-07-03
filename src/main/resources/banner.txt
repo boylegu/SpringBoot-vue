@@ -10,7 +10,7 @@
 /  =================================== ▀
                     ██
 
-${AnsiColor.BRIGHT_RED}Spring Boot Version: ${spring-boot.version} ${spring-boot.formatted-version}
-
-${AnsiColor.BRIGHT_CYAN}SpringBoot-Vue.js  : 0.0.1.RELEASE
+${AnsiColor.BRIGHT_RED}Spring Boot Version : ${spring-boot.version} ${spring-boot.formatted-version}
+${AnsiColor.BRIGHT_CYAN}SpringBoot-Vue.js   : 0.0.1.RELEASE
+${AnsiColor.BRIGHT_BLACK}Author             : Boyle Gu
 
