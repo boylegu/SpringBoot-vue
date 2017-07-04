@@ -6,7 +6,7 @@
 
 
 <p align="center">
-  <a href ="##"><img alt="sanic_vue" src="https://github.com/boylegu/SpringBoot-vue/blob/master/images/newlogo.jpg?raw=true"></a>
+  <a href ="##"><img alt="spring_vue" src="https://github.com/boylegu/SpringBoot-vue/blob/master/images/newlogo.jpg?raw=true"></a>
 
 <h4 align="center" style="color:	#3399FF">
 Convenient & efficient and better performance for Java microservice full stack.
@@ -107,7 +107,7 @@ Vue.js is relatively new and is gaining lot of traction among the community of d
 Components are one of the most powerful features of Vue. They help you extend basic HTML elements to encapsulate reusable code. At a high level, components are custom elements that Vue’s compiler attaches behavior to. 
 
 <p align="center">
-  <a href ="##"><img style="box-shadow: 8px 8px 5px #888888;"alt="sanic_vue" src="http://i2.muimg.com/536217/5ae4b10becac44b0.png"></a>
+  <a href ="##"><img style="box-shadow: 8px 8px 5px #888888;"alt="spring_vue" src="http://i2.muimg.com/536217/5ae4b10becac44b0.png"></a>
   
 ## What's Webpack
 
@@ -180,7 +180,7 @@ This's a sample ShangHai people information system as example demo.
         
 - Build front-end environment
 
-        cd sanic_crudvue/frontend
+        cd springboot_vue/frontend
 
         npm install 
 
@@ -192,6 +192,9 @@ This's a sample ShangHai people information system as example demo.
 
         java -jar springboot_vue-0.0.1-SNAPSHOT.jar
 
+
+[![](https://github.com/boylegu/SpringBoot-vue/blob/master/images/spring_run.png?raw=true)]()
+
 - Run Front-end Web Page
 
         cd springboot_vue/frontend
@@ -199,7 +202,7 @@ This's a sample ShangHai people information system as example demo.
         npm run dev
 
 
-> You can also run `cd sanic_crudvue/frontend;npm run build` and it's with Nginx in the production environment
+> You can also run `cd springboot_vue/frontend;npm run build` and it's with Nginx in the production environment
 
 ## My Final Thoughts
 
