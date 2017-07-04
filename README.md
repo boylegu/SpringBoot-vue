@@ -176,6 +176,31 @@ This's a sample ShangHai people information system as example demo.
 - Please must install Java 1.7  or even higher version
 
 
+### Installation  
+        
+- Build front-end environment
+
+        cd sanic_crudvue/frontend
+
+        npm install 
+
+### Usage
+
+- Run back-end server
+
+        cd springboot_vue/target/
+
+        java -jar springboot_vue-0.0.1-SNAPSHOT.jar
+
+- Run Front-end Web Page
+
+        cd springboot_vue/frontend
+
+        npm run dev
+
+
+> You can also run `cd sanic_crudvue/frontend;npm run build` and it's with Nginx in the production environment
+
 ## My Final Thoughts
 
 ```
