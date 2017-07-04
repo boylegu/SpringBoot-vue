@@ -131,8 +131,7 @@ public class MainController {
         *
         *    @apiExample {httpie} Example usage:
         *
-        *    @apiParam {String} sex
-        *    @apiParam {String} email
+        *        http GET http://127.0.0.1:8000/api/persons/detail/1
         *
         *    @apiSuccess {String} email
         *    @apiSuccess {String} id
@@ -141,7 +140,6 @@ public class MainController {
         *    @apiSuccess {String} username
         *    @apiSuccess {String} zone
         */
-
 
         Persons user = personsRepository.findById(id);
 
