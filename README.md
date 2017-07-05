@@ -6,7 +6,7 @@
 
 
 <p align="center">
-  <a href ="##"><img alt="spring_vue" src="https://github.com/boylegu/SpringBoot-vue/blob/master/images/newlogo.jpg?raw=true"></a>
+  <a href ="##"><img alt="spring_vue" src="https://github.com/boylegu/SpringBoot-vue/blob/master/images/newlogo.jpg?raw=true"></a></p>
 
 <h4 align="center" style="color:	#3399FF">
 Convenient & efficient and better performance for Java microservice full stack.
@@ -21,7 +21,7 @@ Convenient & efficient and better performance for Java microservice full stack.
 
 ## overview
 
-This‘s a CRUD demo example base Spring Boot with Vue2 + webpack2. I hope pass thought this project for express Java microservice full stack base web practice.
+Now about Web develop fields. It's very bloated, outmoded and some development efficiency have a lower with each other than other dynamic language when people refers to Java. Even before somebody shouts loudly ‘Java was died’. But is this really the case? In fact, If you often attention to Java in long time, your feel is too deep. Though it's many disadvantages and verbose. It couldn't be denied that Java is still best language in industry member, and advance with the times. This project is a CRUD demo example base Spring Boot with Vue2 + webpack2. I hope pass thought this project for express Java microservice fast full stack base web practice.
 
 ## Why Spring Boot
 
@@ -30,8 +30,10 @@ Spring is a very popular Java-based framework for building web and enterprise ap
 In relation to Spring, 
 Spring Boot aims to make it easy to create Spring-powered, production-grade applications and services with minimum fuss. It takes an opinionated view of the Spring platform so that new and existing users can quickly get to the bits they need.
 
-The diagram below shows Spring Boot as a point of focus on the larger Spring ecosystem. It presents a small surface area for users to approach and extract value from the rest of Spring:
+The diagram below shows Spring Boot as a point of focus on the larger Spring ecosystem:
 
+<p align="center">
+  <a href ="##"><img alt="spring_vue" src="https://github.com/boylegu/SpringBoot-vue/blob/master/images/springboot.png?raw=true"></a></p>
 
 The primary goals of Spring Boot are:
 
@@ -189,9 +191,8 @@ This's a sample ShangHai people information system as example demo.
 - Run back-end server
 
         cd springboot_vue/target/
-
+        
         java -jar springboot_vue-0.0.1-SNAPSHOT.jar
-
 
 [![](https://github.com/boylegu/SpringBoot-vue/blob/master/images/spring_run.png?raw=true)]()
 
@@ -201,8 +202,31 @@ This's a sample ShangHai people information system as example demo.
 
         npm run dev
 
-
 > You can also run `cd springboot_vue/frontend;npm run build` and it's with Nginx in the production environment
+
+
+## Future Plan
+
+This project can be reference,study or teaching demonstration. After, I will update at every increme version in succession. In future,I have already some plan to below:
+
+1. User Authentication
+2. state manage with vuex
+3. use vue-route
+4. add docker deploy method
+5. support yarn
+... ...
+
+## Support
+
+1. Github Issue
+
+2. To e-mail: gubaoer@hotmail.com
+
+3. You can also join to QQ Group: 315308272
+
+## Related projects
+
+- [Sanic-Vue for Python](https://github.com/boylegu/SanicCRUD-vue)
 
 ## My Final Thoughts
 
