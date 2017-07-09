@@ -117,6 +117,7 @@ Webpack提供了一整套前端工程自动化的解决方案
 
 一个简单的“上海人员信息查询系统”作为例子
 
+[![demo-image](https://github.com/boylegu/SpringBoot-vue/blob/master/images/demo.gif?raw=true)]()
 
 ### 具备的功能(v0.1)
 

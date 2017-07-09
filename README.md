@@ -120,6 +120,8 @@ Webpack is a powerful tool that bundles your app source code efficiently and loa
 
 This's a sample ShangHai people information system as example demo.
 
+[![demo-image](https://github.com/boylegu/SpringBoot-vue/blob/master/images/demo.gif?raw=true)]()
+
 ### Feature (v0.1)
 - Spring Boot (Back-end) 
 
