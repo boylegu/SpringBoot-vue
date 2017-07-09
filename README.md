@@ -18,6 +18,7 @@ Convenient & efficient and better performance for Java microservice full stack.
 
 <p align="right" style="color: #3399FF">———————By Boyle Gu</p>
 
+### [Chinese README[中文]](https://github.com/boylegu/SpringBoot-vue/blob/master/README-CN.md)
 
 ## overview
 
