@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.Before;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.mock.web.MockServletContext;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -18,6 +19,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import com.boylegu.springboot_vue.controller.MainController;
+import com.boylegu.springboot_vue.entities.Persons;
+import com.boylegu.springboot_vue.dao.PersonsRepository;
+
 
 /**
  * @author Boyle Gu
@@ -32,10 +36,182 @@ public class SpringbootVueApplicationTests {
 
     private MockMvc mvc;
 
+    @Autowired
+    PersonsRepository personsRepository;
+
     @Before
     public void setUp() throws Exception {
         mvc = MockMvcBuilders.standaloneSetup(
                 new MainController()).build();
+
+        Persons persons = new Persons();
+        persons.setZone("t1 zone");
+        persons.setPhone("11111");
+        persons.setEmail("t1@qq.com");
+        persons.setUsername("t1");
+        personsRepository.save(persons);
+
+        /*
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+        */
     }
 
     @Test
