@@ -9,34 +9,60 @@ import org.hibernate.dialect.function.VarArgsSQLFunction;
 import org.hibernate.type.StringType;
 
 public class SQLiteDialect extends Dialect {
+
     public SQLiteDialect() {
+
         registerColumnType(Types.BIT, "integer");
+
         registerColumnType(Types.TINYINT, "tinyint");
+
         registerColumnType(Types.SMALLINT, "smallint");
+
         registerColumnType(Types.INTEGER, "integer");
+
         registerColumnType(Types.BIGINT, "bigint");
+
         registerColumnType(Types.FLOAT, "float");
+
         registerColumnType(Types.REAL, "real");
+
         registerColumnType(Types.DOUBLE, "double");
+
         registerColumnType(Types.NUMERIC, "numeric");
+
         registerColumnType(Types.DECIMAL, "decimal");
+
         registerColumnType(Types.CHAR, "char");
+
         registerColumnType(Types.VARCHAR, "varchar");
+
         registerColumnType(Types.LONGVARCHAR, "longvarchar");
+
         registerColumnType(Types.DATE, "date");
+
         registerColumnType(Types.TIME, "time");
+
         registerColumnType(Types.TIMESTAMP, "timestamp");
+
         registerColumnType(Types.BINARY, "blob");
+
         registerColumnType(Types.VARBINARY, "blob");
+
         registerColumnType(Types.LONGVARBINARY, "blob");
+
         // registerColumnType(Types.NULL, "null");
         registerColumnType(Types.BLOB, "blob");
+
         registerColumnType(Types.CLOB, "clob");
+
         registerColumnType(Types.BOOLEAN, "integer");
 
         registerFunction("concat", new VarArgsSQLFunction(StringType.INSTANCE, "", "||", ""));
+
         registerFunction("mod", new SQLFunctionTemplate(StringType.INSTANCE, "?1 % ?2"));
+
         registerFunction("substr", new StandardSQLFunction("substr", StringType.INSTANCE));
+
         registerFunction("substring", new StandardSQLFunction("substr", StringType.INSTANCE));
     }
 
@@ -77,6 +103,7 @@ public class SQLiteDialect extends Dialect {
     }
 
     protected String getLimitString(String query, boolean hasOffset) {
+
         return new StringBuffer(query.length() + 20).
                 append(query).
                 append(hasOffset ? " limit ? offset ?" : " limit ?").
@@ -132,7 +159,9 @@ public class SQLiteDialect extends Dialect {
     }
 
     public String getDropForeignKeyString() {
+
         throw new UnsupportedOperationException("No drop foreign key syntax supported by SQLiteDialect");
+
     }
 
     public String getAddForeignKeyConstraintString(String constraintName,
@@ -142,7 +171,9 @@ public class SQLiteDialect extends Dialect {
     }
 
     public String getAddPrimaryKeyConstraintString(String constraintName) {
+
         throw new UnsupportedOperationException("No add primary key syntax supported by SQLiteDialect");
+
     }
 
     public boolean supportsIfExistsBeforeTableName() {
