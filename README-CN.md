@@ -226,6 +226,11 @@ Webpack提供了一整套前端工程自动化的解决方案
 2. 电子邮件的形式 gubaoer@hotmail.com
 3. QQ群：315308272
 
+## 相关项目
+
+- [Sanic-Vue for Python](https://github.com/boylegu/SanicCRUD-vue)
+
+
 ## My Final Thoughts
 
 ```
