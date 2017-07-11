@@ -51,6 +51,300 @@ public class SpringbootVueApplicationTests {
         persons.setUsername("t1");
         personsRepository.save(persons);
 
+    }
+
+    @Test
+    public void testUserController() throws Exception {
+//  	Test MainController
+        RequestBuilder request = null;
+
+        request = get("/api/persons/sex");
+        mvc.perform(request)
+                .andExpect(status().isOk())
+                .andExpect(content().string(equalTo("[]")));
+
+        request = get("/api/persons/");
+        mvc.perform(request)
+                .andExpect(status().isOk())
+                .andExpect(content().string(equalTo("[]")));
+
+        request = get("/api/persons/detail/1");
+        mvc.perform(request)
+                .andExpect(status().isOk())
+                .andExpect(content().string(equalTo("[{\"id\":1,\"username\":\"test\",\"zone\":20}]")));
+
+        request = put("/api/persons/detail/1")
+                .param("phone", "111111")
+                .param("email", "test@qq.com");
+        mvc.perform(request)
+                .andExpect(content().string(equalTo("success")));
+
+        request = get("/api/persons");
+        mvc.perform(request)
+                .andExpect(status().isOk())
+                .andExpect(content().string(equalTo("[]")));
+
+    }
+
+}
+
+
+
+        /*
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+                Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+                Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+                Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
         /*
         Persons persons2 = new Persons();
         persons2.setZone("t1 zone");
@@ -307,40 +601,1284 @@ public class SpringbootVueApplicationTests {
         persons2.setUsername("t1");
         personsRepository.save(persons2);
 
+                /*
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+                Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+                Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+                Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+                /*
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+                Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+                Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+                Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+                /*
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+                Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+                Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+                Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+                /*
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+                Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+                Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+                Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+                /*
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+                Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+                Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+                Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
+
+        Persons persons2 = new Persons();
+        persons2.setZone("t1 zone");
+        persons2.setPhone("11111");
+        persons2.setEmail("t1@qq.com");
+        persons2.setUsername("t1");
+        personsRepository.save(persons2);
+
         */
-    }
-
-    @Test
-    public void testUserController() throws Exception {
-//  	Test MainController
-        RequestBuilder request = null;
-
-        request = get("/api/persons/sex");
-        mvc.perform(request)
-                .andExpect(status().isOk())
-                .andExpect(content().string(equalTo("[]")));
-
-        request = get("/api/persons/");
-        mvc.perform(request)
-                .andExpect(status().isOk())
-                .andExpect(content().string(equalTo("[]")));
-
-        request = get("/api/persons/detail/1");
-        mvc.perform(request)
-                .andExpect(status().isOk())
-                .andExpect(content().string(equalTo("[{\"id\":1,\"username\":\"test\",\"zone\":20}]")));
-
-        request = put("/api/persons/detail/1")
-                .param("phone", "111111")
-                .param("email", "test@qq.com");
-        mvc.perform(request)
-                .andExpect(content().string(equalTo("success")));
-
-        request = get("/api/persons");
-        mvc.perform(request)
-                .andExpect(status().isOk())
-                .andExpect(content().string(equalTo("[]")));
-
-    }
-
-}
