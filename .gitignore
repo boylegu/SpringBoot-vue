@@ -24,7 +24,6 @@ target/springboot_vue-0.0.1-SNAPSHOT.jar.original
 
 ### NetBeans ###
 nbproject/private/
-build/
 nbbuild/
 dist/
 nbdist/
