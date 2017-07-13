@@ -182,7 +182,7 @@ This's a sample ShangHai people information system as example demo.
 - install Node.js / NPM
 - Clone Repository
 
-        git clone https://github.com/boylegu/SpringBoot-vue
+        git clone https://github.com/boylegu/SpringBoot-vue.git
         
         cd springboot_vue
 

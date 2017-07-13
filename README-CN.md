@@ -180,7 +180,7 @@ Webpack提供了一整套前端工程自动化的解决方案
 - 安装Node.js/NPM
 - 克隆仓库
 
-        git clone https://github.com/boylegu/SpringBoot-vue
+        git clone https://github.com/boylegu/SpringBoot-vue.git
         
         cd springboot_vue
 
