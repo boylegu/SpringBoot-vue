@@ -179,6 +179,12 @@ This's a sample ShangHai people information system as example demo.
 ### Preparation
 
 - Please must install Java 1.7  or even higher version
+- install Node.js / NPM
+- Clone Repository
+
+        git clone https://github.com/boylegu/SpringBoot-vue
+        
+        cd springboot_vue
 
 
 ### Installation  

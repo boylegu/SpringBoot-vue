@@ -178,6 +178,11 @@ Webpack提供了一整套前端工程自动化的解决方案
 
 - 安装JDK1.7或更新的版本
 - 安装Node.js/NPM
+- 克隆仓库
+
+        git clone https://github.com/boylegu/SpringBoot-vue
+        
+        cd springboot_vue
 
 ### 安装  
         
