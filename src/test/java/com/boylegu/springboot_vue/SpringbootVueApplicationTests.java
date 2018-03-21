@@ -30,7 +30,8 @@ import com.boylegu.springboot_vue.dao.PersonsRepository;
  */
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = MockServletContext.class)
+//@ContextConfiguration(classes = MockServletContext.class)
+@SpringBootTest(classes = { App.class })
 @WebAppConfiguration
 public class SpringbootVueApplicationTests {
 
