@@ -5,7 +5,8 @@
             <el-select v-model="formInline.sex" clearable placeholder="select sex"
                        v-on:visible-change="selectDemo">
                 <el-option
-                        v-for="item in type_options"
+                        v-for="(item, index) in type_options"
+                        :key = "index"
                         :label="item.label"
                         :value="item.value">
                 </el-option>
