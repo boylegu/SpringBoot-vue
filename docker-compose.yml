@@ -1,0 +1,26 @@
+version: '3'
+services:
+    frontend:
+        build:
+            dockerfile: ./frontend.dockerfile
+            context: .
+        image: spring-vue/frontend
+        container_name: spring-vue-front
+        ports:
+            - "8080:8080"    
+        networks: 
+            - production-network
+
+    backend:
+        build:
+            dockerfile: ./backend.dockerfile
+            context: .
+        image: spring-vue/backend
+        container_name: spring-vue-back 
+        networks: 
+            - production-network
+        depends_on: 
+            - "frontend"    
+networks: 
+    production-network:
+        driver: bridge
