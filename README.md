@@ -20,13 +20,13 @@ Convenient & efficient and better performance for Java microservice full stack.
 
 ### [Chinese README[中文]](https://github.com/boylegu/SpringBoot-vue/blob/master/README-CN.md)
 
-## overview
+## Overview
 
 Now about Web develop fields. It's very bloated, outmoded and some development efficiency have a lower with each other than other dynamic language when people refers to Java. Even before somebody shouts loudly ‘Java was died’. But is this really the case? In fact, If you often attention to Java in long time, your feel is too deep. Though it's many disadvantages and verbose. It couldn't be denied that Java is still best language in industry member, and advance with the times. This project is a CRUD demo example base Spring Boot with Vue2 + webpack2. I hope pass thought this project for express Java microservice fast full stack base web practice.
 
 ## Why Spring Boot
 
-Spring is a very popular Java-based framework for building web and enterprise applications. Unlike many other frameworks, which focus on only one area, Spring framework provides a wide verity of features addressing the modern business needs via its portfolio projects.
+Spring is a very popular Java-based framework for building web and enterprise applications. Unlike many other frameworks, which focus on only one area, Spring framework provides a wide verity of features addressing the modern business needs via its portfolio project. The main goal of the Spring Boot framework is to reduce overall development time and increase efficiency by having a default setup for unit and integration tests.
 
 In relation to Spring, 
 Spring Boot aims to make it easy to create Spring-powered, production-grade applications and services with minimum fuss. It takes an opinionated view of the Spring platform so that new and existing users can quickly get to the bits they need.
@@ -167,7 +167,7 @@ This's a sample ShangHai people information system as example demo.
 
 ### Main technology stack
 
-- Java 1.7
+- Java 1.8+
 - Spring Boot 1.5.x
 - Maven
 - sqlite (not recommend, only convenience example)
@@ -178,7 +178,7 @@ This's a sample ShangHai people information system as example demo.
 
 ### Preparation
 
-- Please must install Java 1.7  or even higher version
+- Please must install Java 1.8  or even higher version
 - install Node.js / NPM
 - Clone Repository
 
@@ -216,7 +216,7 @@ This's a sample ShangHai people information system as example demo.
 
 ## Future Plan
 
-This project can be reference,study or teaching demonstration. After, I will update at every increme version in succession. In future,I have already some plan to below:
+This project can be reference,study or teaching demonstration. After, I will update at every increment version in succession. In future,I have already some plan to below:
 
 1. User Authentication
 2. state manage with vuex
