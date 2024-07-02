@@ -43,7 +43,7 @@
     "style-loader": "^0.16.1",
     "url-loader": "^0.5.8",
     "vue": "^2.2.6",
-    "shelljs": "^0.7.6",
+    "shelljs": "^0.8.5",
     "vue-loader": "^11.3.3",
     "vue-style-loader": "^3.0.1",
     "vue-template-compiler": "^2.2.6",
